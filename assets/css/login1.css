@@ -1,0 +1,90 @@
+/* Background Modern */
+body.login {
+    background: linear-gradient(to bottom, #fff, var(--color1));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Kotak Login */
+.login #login {
+    width: 400px;
+    padding: 0;
+}
+.login form {
+    background: #ffffff;
+    border: none;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.login form p:first-child:before {
+    color: var(--color1);
+}
+
+/* Input Form */
+.login form .input {
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.login form .input:focus {
+    border-color: var(--color1);
+    outline: none;
+}
+
+/* Tombol Login */
+.login form .forgetmenot {
+    margin-bottom: 10px!important;
+}
+.wp-core-ui .button-primary {
+    background: var(--color1);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 7px 10px!important;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+.wp-core-ui .button-primary:hover {
+    background: var(--color2);
+}
+
+/* Link di Bawah Form */
+.login #nav, .login #backtoblog {
+    text-align: center;
+}
+
+.login #nav a, .login #backtoblog a {
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+}
+
+.login #nav a:hover, .login #backtoblog a:hover {
+    color: #c0d3f3;
+}
+
+.login .privacy-policy-page-link {
+    display: none;
+}
+
+/* Placeholder Styling */
+.login form .input::placeholder {
+    color: #aaa;
+}
+
+/* Perbaikan Responsif */
+@media (max-width: 420px) {
+    .login #login {
+        padding: 0 15px;
+    }
+}

@@ -1,0 +1,896 @@
+/*
+Theme Name: Warta
+Version: 1.1
+Theme URI: http://www.oketheme.com/themes/warta-theme
+Author: Tri Yuli Kurniawan
+Author URI: http://www.oketheme.com
+Description: Warta adalah tema WordPress yang dirancang khusus untuk situs berita, majalah online, dan blog profesional. Dengan desain yang bersih, modern, dan mudah digunakan, Warta menghadirkan pengalaman membaca yang nyaman dan optimal untuk pengunjung website Anda. Free update & full support!
+Requires at least: 5.0
+Requires PHP: 7.2
+*/
+
+/* ROOT VARIABLE */
+
+:root {
+    --color1: #1F5AD6;
+    --color2: #FF2626;
+    --bodybg: #fafafa;
+    --bodycolor: #333333;
+    --colorbg: #fcfcfc;
+    --colorborder: #f5f5f5;
+    --colordark: #222222;
+    --colorlight: #fefefe;
+    --colordarktrans: #00000050;
+    --colorlighttrans: #ffffffd9;
+    --colorwhite: #ffffff;
+    --maxwidth: 1052px;
+    --autopad: calc((100% - var(--maxwidth)) / 2);
+    --bradius: 7px;
+    --x2bradius: calc(var(--bradius) * 2);
+    --x3bradius: calc(var(--bradius) * 3);
+    --x10bradius: calc(var(--bradius) * 10);
+}
+
+/* ---------- RESET ---------- */
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    line-height: 1.6em;
+    color: var(--bodycolor)!important;
+    background: var(--bodybg);
+    margin: 0;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Link */
+a{
+    color: var(--bodycolor);
+    transition: .3s;
+}
+a:hover {
+    color: var(--color2);
+}
+a:active,
+a:hover,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.2em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 20px 0;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: var(--bodycolor);
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+/* Input, Select, Textarea */
+input:not([type='radio']):not([type='checkbox']),
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: var(--bradius);
+}
+input[readonly],
+textarea[readonly] {
+    background: var(--colorlight)!important;
+    color: #AAA!important;
+}
+input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='image']):not([type='range']):not([type='file']),
+select,
+textarea {
+    padding: .6em .8em;
+    outline: 0;
+    background: var(--colorlight);
+    color: var(--bodycolor);
+    border: 1px solid var(--colorborder);
+    line-height: normal;
+}
+select {
+    cursor: pointer;
+}
+input[type=text]:focus,
+select:focus,
+textarea:focus {
+    background: var(--colorlight);
+}
+textarea::placeholder,
+input::placeholder {
+    color: #AAA;
+}
+
+/* Input Type Range */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: var(--x2bradius);
+}
+
+/* Track: webkit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 16px;
+    background: var(--colorborder);
+    border-radius: var(--x2bradius);
+}
+/* Track: Mozilla Firefox */
+input[type="range"]::-moz-range-track {
+    height: 16px;
+    background: var(--colorborder);
+    border-radius: var(--x2bradius);
+}
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    height: 16px;
+    width: 16px;
+    background-color: var(--colorlight);
+    border-radius: var(--x2bradius);
+    border: 2px solid var(--color1);
+    box-shadow: -408px 0 0 400px var(--color1);
+}
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    background-color: var(--colorlight);
+    border-radius: var(--x2bradius);
+    border: 2px solid var(--color1);
+    box-shadow: -408px 0 0 400px var(--color1);
+}
+
+/* Button */
+.bttn,
+.button-primary,
+input[type='submit'],
+button {
+    cursor: pointer;
+    padding: .6em .8em;
+    background: var(--color1);
+    border: 0;
+    outline: 0;
+    color: var(--colorwhite);
+    transition: .3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    line-height: normal;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: var(--bradius);
+}
+.bttn:hover,
+.button-primary:hover,
+.form-submit input:hover,
+button:hover {
+    color: var(--colorwhite);
+    background: var(--color2);
+}
+.bttn:focus {
+    color: var(--colorwhite);
+}
+.bttn._big {
+    padding: 15px 20px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/* BLOCKQUOTE & CODE */
+blockquote {
+    width: 90%;
+    margin: 30px auto;
+    padding: 35px 40px 30px;
+    border: 1px solid var(--colorborder);
+    position: relative;
+    background: var(--colorbg);
+    border-radius: var(--x2bradius);
+}
+blockquote::before {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    content: "\201C";
+    color: var(--color1);
+    font-size: 6em;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+}
+
+/* Code */
+code {
+    background: var(--colorbg);
+    border: 1px solid var(--colorborder);
+    padding: 15px;
+    display: block;
+}
+
+/* WP RESET IMAGE & CAPTION */
+.wp-caption,
+img.alignnone,
+p img {
+    max-width: 100%!important;
+    width: auto;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a img {
+    border: none;
+}
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.aligncenter {
+    display: block;
+    margin: 10px auto;
+}
+img.alignright {
+    display: inline;
+    float: right;
+    margin: 0 0 10px 10px;
+}
+img.alignleft {
+    display: inline;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.wp-caption p.wp-caption-text {
+    font-size: .85em;
+    margin: 0;
+}
+.wp-caption.aligncenter {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+.wp-caption.alignleft {
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+.wp-caption.alignright {
+    float: right;
+    margin: 5px 0 5px 10px;
+}
+
+/* ---------------- END RESET ---------------- */
+
+/* SPIN ANIMATION */
+@keyframes spin { 
+    100% { 
+        transform: rotateZ(360deg); 
+    }
+}
+
+/* BLINKER ANIMATION */
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+/* MOVEINRIGT ANIMATION */
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px)
+    }
+    25% {
+        opacity: .33;
+        transform: translateX(0px)
+    }
+    50% {
+        opacity: .66;
+        transform: translateX(10px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+/* ZOOMIN ANIMATION */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(.97);
+    }
+    50% {
+        opacity: .5;
+        transform: scale(1.005);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* POPBOUNCE ANIMATION */
+@keyframes popBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    75% {
+        transform: scale(0.95);
+    }
+    90% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* SCROLLBAR  */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--colorborder);
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    opacity: .1;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color2);
+}
+body ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* -------------- OWN LIBRARY ---------------- */
+
+/* FONTS SIZE & COLOR */
+.small {
+    font-size: .8em!important;
+}
+.medium {
+    font-size: .9em!important;
+}
+.big {
+    font-size: 1.5em!important;
+}
+.jumbo {
+    font-size: 2.7em!important;
+}
+.hidden {
+    font-size: 0;
+}
+.color1 {
+    color: var(--color1);
+}
+.color2 {
+    color: var(--color2);
+}
+.swap {
+    background: var(--color2);
+}
+.swap.hover:hover {
+    background: var(--color1);
+}
+
+/* BOX */
+.info,
+.notice,
+.sukses,
+.warning {
+    width: 100%;
+    padding: 15px;
+    background: var(--colorbg);
+    border: 1px solid var(--colorborder);
+    overflow: hidden;
+    border-radius: var(--x2bradius);
+}
+.notice {
+    background: #FFFFEC;
+    border-color: #FFB973;
+    color: #FF8000;
+}
+.warning {
+    background: #ffe2e2;
+    border-color: #f7b1b1;
+    color: red;
+}
+.sukses {
+    color: #38baa7;
+    background-color: #ebf8f6;
+    border-color: #b7e1db;
+}
+
+/* EXTRA */
+.underlink {
+    padding-bottom: 5px;
+    border-bottom: 1px dashed var(--bodycolor);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .85em;
+    letter-spacing: .1em;
+}
+.underlink:hover {
+    border-color: var(--color2);
+}
+.rounded {
+    border-radius: var(--x2bradius);
+}
+.circle {
+    border-radius: 50%;
+}
+.nolist {
+    list-style: none;
+}
+.noborder {
+    border: none !important;
+}
+.center {
+    text-align: center;
+}
+.coret {
+    text-decoration: line-through;
+}
+
+/* MARGIN */
+.nm {
+    margin: 0 !important;
+}
+.nm-top {
+    margin-top: 0 !important;
+}
+.nm-bottom {
+    margin-bottom: 0 !important;
+}
+
+/* ELIPSIS */
+.elipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+.elipsis.clamp2 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.elipsis.clamp3 {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+.elipsis.clamp4 {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+
+/* POSITION */
+.relative {
+    position: relative;
+}
+
+/* DISPLAY: FLEX */
+
+.flexcon {
+    display: flex;
+}
+.flexcon.column {
+    flex-direction: column;
+}
+.flexcon.reverse {
+    flex-direction: row-reverse;
+}
+.flexcon.column.reverse {
+    flex-direction: column-reverse;
+}
+.flexcon.column.nm > * {
+    margin: 0;
+}
+.flexcon.inline {
+    display: inline-flex;
+}
+.flexcon.wrap {
+    flex-wrap: wrap;
+}
+
+/* DISPLAY: GRID */
+
+.gridcon {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.two-col {
+    grid-template-columns: repeat(2, 1fr)!important;
+}
+.three-col {
+    grid-template-columns: repeat(3, 1fr)!important;
+}
+.four-col {
+    grid-template-columns: repeat(4, 1fr)!important;
+}
+.five-col {
+    grid-template-columns: repeat(5, 1fr)!important;
+}
+.six-col {
+    grid-template-columns: repeat(5, 1fr)!important;
+}
+
+/* GAP */
+.gap-5 {
+    gap: 5px!important;
+}
+.gap-10 {
+    gap: 10px!important;
+}
+.gap-15 {
+    gap: 15px!important;
+}
+.gap-20 {
+    gap: 20px!important;
+}
+.gap-30 {
+    gap: 30px!important;
+}
+.gap-40 {
+    gap: 40px!important;
+}
+.gap-50 {
+    gap: 50px!important;
+}
+
+/* ROW GAP */
+.row-gap-0 {
+    row-gap: 0px!important;
+}
+.row-gap-5 {
+    row-gap: 5px!important;
+}
+.row-gap-10 {
+    row-gap: 10px!important;
+}
+.row-gap-15 {
+    row-gap: 15px!important;
+}
+.row-gap-20 {
+    row-gap: 20px!important;
+}
+.row-gap-30 {
+    row-gap: 30px!important;
+}
+.row-gap-40 {
+    row-gap: 40px!important;
+}
+.row-gap-50 {
+    row-gap: 50px!important;
+}
+
+/* COLUMN GAP */
+.col-gap-5 {
+    column-gap: 5px!important;
+}
+.col-gap-10 {
+    column-gap: 10px!important;
+}
+.col-gap-15 {
+    column-gap: 15px!important;
+}
+.col-gap-20 {
+    column-gap: 20px!important;
+}
+.col-gap-30 {
+    column-gap: 30px!important;
+}
+.col-gap-40 {
+    column-gap: 40px!important;
+}
+.col-gap-50 {
+    column-gap: 50px!important;
+}
+
+/* ALIGN */
+.align-center {
+    align-items: center!important;
+}
+.align-start {
+    align-items: flex-start!important;
+}
+.align-end {
+    align-items: flex-end!important;
+}
+.align-baseline {
+    align-items: baseline!important;
+}
+.align-self-center {
+    align-self: center!important;
+}
+.align-self-start {
+    align-self: flex-start!important;
+}
+.align-self-end {
+    align-self: flex-end!important;
+}
+.align-self-baseline {
+    align-self: baseline!important;
+}
+
+/* JUSTIFY */
+.justify-center {
+    justify-content: center;
+}
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+
+/* OBJECT FIT COVER */
+.ofc {
+    display: block;
+}
+.ofc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* BG Transparent */
+.bgtrans {
+    position: relative;
+    z-index: 1;
+}
+.bgtrans:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    filter: grayscale(1);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* ---------- END OWN LIBRARY ---------- */
+
+/* SPLIDE */
+.splide__arrow {
+    border-radius: 0;
+    background: var(--color1);
+    width: 30px;
+    height: 30px;
+}
+.splide__arrow svg {
+    fill: var(--colorwhite);
+}
+.splide__arrow:hover {
+    background: var(--color2);
+}
+
+/* MEGA SLIDER */
+.mega .splide__arrow {
+    width: 50px;
+    height: 50px;
+}
+.mega .splide__arrow--prev {
+    left: 100px;
+}
+.mega .splide__arrow--next {
+    right: 100px;
+}
+.mega:hover .splide__arrow--prev {
+    left: 20px;
+}
+.mega:hover .splide__arrow--next {
+    right: 20px;
+}
+.mega .splide__arrow {
+    transition: ease-in-out .5s;
+    border-radius: var(--x10bradius);
+}
+
+/* POST SLIDER */
+.post-slider .splide__arrow {
+    background: none;
+    border: 1px solid var(--color1);
+    width: 22px;
+    height: 22px;
+    border-radius: var(--x10bradius);
+}
+.post-slider .splide__arrow:hover {
+    border-color: var(--color2);
+}
+.post-slider .splide__arrow--next {
+    right: 0;
+    top: -35px;
+}
+.post-slider .splide__arrow--prev {
+    right: 27px;
+    top: -35px;
+    left: unset;
+}
+.post-slider .splide__arrow svg {
+    fill: var(--color1);
+    width: .8em;
+}
+
+.post-slider .splide__arrow:hover svg {
+    fill: var(--color2);
+    width: .8em;
+}
+
+/* POPUP - FANCYBOX*/
+.popup {
+    min-width: 300px;
+    max-width: 900px;
+    display: none;
+    padding: 10px;
+    border-radius: var(--x2bradius);
+    background: var(--colorbg);
+}
+.popup a {
+    outline: none;
+}
+.popup ul li {
+    padding: 10px 0;
+}
+.popup iframe, .popup img {
+    display: block;
+    border-radius: var(--bradius);
+}
+.popup blockquote {
+    font-style: unset;
+    padding: 0;
+    border: none;
+    background: none;
+    margin: 0 auto!important;
+}
+.popup blockquote::before {
+    content: '';
+}
+.fancybox-button:hover svg {
+    color: var(--colorwhite);
+}
+.fancybox-close-small {
+    background: var(--colorlight);
+    transition: .3s;
+}
+
+/* HSCROLL */
+.hscroll {
+    overflow-x: auto;
+    white-space: nowrap; 
+}
+.hscroll:active {
+    cursor: grabbing; /* Saat sedang drag */
+}
+.hscroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* BREADCRUMB */
+.crumbs {
+    font-size: .9em;
+    border-bottom: 1px solid var(--colorborder);
+    padding-bottom: 10px;
+}
+
+/* WRAP POST */
+.wrap-post ul li,
+.wrap-post ol li {
+    margin-left: 20px;
+}
+.wrap-post p:first-child {
+    margin-top: 0;
+}
+.wrap-post p:last-child {
+    margin-bottom: 0;
+}
+.wrap-post img {
+    border-radius: var(--x2bradius);
+}
+
+/* SEO */
+.xeo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Widgets */
+.widgets .searchform div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.widgets .searchform label {
+    display: none;
+}
+.widgets .searchform input[type="text"] {
+    width: 70%;
+    height: 40px;
+}
+.widgets .searchform input[type="submit"] {
+    width: 30%;
+    height: 40px;
+}
+
+

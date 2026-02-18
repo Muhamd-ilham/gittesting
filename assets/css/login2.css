@@ -1,0 +1,135 @@
+/* Background Modern */
+body.login {
+    background: linear-gradient(to bottom, #fff, var(--color1));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Kotak Login */
+.login #login {
+    width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+}
+.login #login h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: #ffffff;
+    /* text-shadow: 1px 1px 1px #fff; */
+}
+.login #login h1:before,
+.login #login h1:after {
+    margin: 0;
+    padding: 20px;
+    line-height: 1em;
+}
+.login #login h1 a {
+    margin: 0!important;
+}
+.login .wp-login-logo {
+    grid-row: span 4;
+}
+
+.login #login #nav,
+.login #login #backtoblog {
+    grid-column: span 2;
+    text-align: right;
+    padding: 0;
+}
+
+/* Login Form */
+.login form {
+    background: #ffffff;
+    border: none;
+    padding: 30px;
+    border-radius: 12px;
+    margin-left: auto;
+}
+
+/* Input Form */
+.login form .input {
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.login form .input:focus {
+    border-color: var(--color1);
+    outline: none;
+}
+
+/* Tombol Login */
+.login form .forgetmenot {
+    margin-bottom: 10px!important;
+}
+.wp-core-ui .button-primary {
+    background: var(--color1);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 7px 10px!important;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+.wp-core-ui .button-primary:hover {
+    background: var(--color2);
+}
+
+/* Link di Bawah Form */
+.login #nav, .login #backtoblog {
+    text-align: center;
+}
+
+.login #nav a, .login #backtoblog a {
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+}
+
+.login #nav a:hover, .login #backtoblog a:hover {
+    color: #c0d3f3;
+}
+
+.login .privacy-policy-page-link {
+    display: none;
+}
+
+/* Placeholder Styling */
+.login form .input::placeholder {
+    color: #aaa;
+}
+
+@media only screen and (max-width: 900px) {
+    .login #login {
+        width: 100%;
+        padding: 0 15px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .login #login h1 {
+        text-align: center;
+        max-width: 400px;
+    }
+    .login form {
+        width: auto;
+        max-width: 400px;
+        margin-left: 0;
+    }
+    .login #login #nav,
+    .login #login #backtoblog {
+        grid-column: unset;
+        text-align: center;
+    }
+}
+

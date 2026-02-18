@@ -1,0 +1,22 @@
+V1.1 - (31-12-2025)
+- Menambahkan fitur PWA (Progressive Web App)
+- Menambahkan fitur font control
+- Menambahkan opsi menampilkan iklan di halaman tertentu
+- Menambahkan opsi atas/bawah untuk mengatur (sorter) item di pengaturan beranda
+- Menambahkan opsi logo berbeda pada dark mode
+- Menambahkan opsi dark mode sebagai default
+- Menambahkan tombol print artikel
+- Menambahkan tombol share Threads
+- Menambahkan sosial media Threads
+- Menambahkan custom menu pada Menu Category
+- Memperbaiki bug tidak bisa merubah judul "Breaking News"
+- Memperbaiki bug iklan kode javascript
+- Memperbaiki bug fitur custom login
+- Memperbaiki bug menu footer di mobile version
+- Memperbaiki bug nama hari di tanggal artikel
+- Memperbaiki bug error 500 ketika tema di-aktifkan
+- Update Google font
+- Mengoptimalkan css
+
+V1.0 - (17-03-2025)
+- Initial release

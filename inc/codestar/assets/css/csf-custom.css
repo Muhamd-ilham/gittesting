@@ -1,0 +1,117 @@
+/* --------------- CSF Custom --------------- */
+
+.csf-header-inner{
+    background-image:url('../images/options-bg.png');
+    border-bottom: 5px solid #0073aa;
+}
+
+.csf-hide {
+    display: none;
+}
+.csf-before-text {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.csf-depend-visible.csf-depend-on .clear:before {
+    display: none;
+}
+
+/* Typography */
+.csf_custom_typography .csf--block-font-style {
+    display: none;
+}
+
+/* Customizer */
+.customize-control-csf {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d5d5d5;
+}
+.customize-control-csf:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Submessage */
+.csf-submessage {
+    font-size: 13px!important;
+}
+
+/* No Input */
+.csf-upload-noinput input[type="text"] {   
+    display: none;
+}
+.csf-field-upload.csf-upload-noinput .csf--wrap {
+    gap: 5px;
+}
+.csf-field-upload.csf-upload-noinput .csf--wrap > *,
+.csf-field-background.csf-upload-noinput .csf--button {
+    margin: 0;
+}
+
+/* Fieldset */
+.csf-field-fieldset .csf-fieldset-content {
+    border: none!important;
+    box-shadow: none!important;
+}
+.csf-field-fieldset .csf-fieldset-content>.csf-field {
+    padding: 15px 0!important;
+}
+.csf-field-fieldset .csf-fieldset-content>.csf-field:first-child {
+    padding-top: 0!important;
+}
+.csf-field-fieldset .csf-fieldset-content>.csf-field:last-child {
+    padding-bottom: 0!important;
+}
+#customize-theme-controls .csf-field-fieldset .csf-fieldset-content>.csf-field {
+    padding: 15px!important;
+}
+
+/* Sortable */
+.csf-sortable {
+    background: #fafafa;
+}
+.csf-sortable-content {
+    pointer-events: auto; /* Pastikan elemen ini tetap interaktif */
+}
+.csf-sortable .csf-sortable-helper {
+    cursor: grab;
+}
+
+/* Select Choosen */
+.chosen-container-multi .chosen-choices li {
+    float: none;
+    display: inline-grid;
+}
+.chosen-container-multi .chosen-choices li span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    padding: 3px;
+}
+.csf-field .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:before {
+    padding-top: 8px!important;
+}
+
+/* Button Set */
+.csf-field-button_set .csf--button {
+    line-height: 28px;
+    font-style: normal;
+    text-align: center;
+    height: 28px;
+    padding: 0 10px!important;
+}
+.csf-field-button_set .csf--button:first-child.csf--active {
+    border-color: #ed6f6f!important;
+    background-color: #ed6f6f!important;
+    font-weight: 500;
+}
+.csf-field-button_set .csf--button.csf--active,
+.normal.csf-field-button_set .csf--button:first-child.csf--active  {
+    border-color: #4fb845!important;
+    background-color: #4fb845!important;
+    font-weight: 500;
+}
