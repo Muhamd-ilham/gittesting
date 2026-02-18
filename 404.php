@@ -3,7 +3,7 @@
     <div class="_col1 flexcon column gap-20">
         <div class="single-content _blog flexcon nm column gap-20">
             <?php oke_crumb(); ads_content_top();?>
-            <h1><?php _e('Kesalahan 404 - Halaman tidak ditemukan!','oketheme'); ?></h1>
+            <h1><?php _e('Kesalahan 404 - Halaman enggak ditemuin!','oketheme'); ?></h1>
             <div class="wrap-post">
                 <h2><?=__('Maaf, halaman yang Anda cari kemungkinan telah dipindahkan atau dihapus.', 'oketheme'); ?></h2>
                 <p><a href="<?=home_url();?>">&laquo; <?=__('kembali ke Beranda', 'oketheme');?></a> <?=__('atau silahkan gunakan kolom pencarian dibawah ini.', 'oketheme');?></p>
