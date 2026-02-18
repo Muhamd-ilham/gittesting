@@ -55,7 +55,7 @@
                     <h2>
                         <?php _e('Maaf, saat ini belum tersedia post untuk ditampilkan.', 'oketheme');?>
                     </h2>
-                    <p><a href="<?=home_url();?>">&laquo; <?=__('kembali ke Beranda', 'oketheme');?></a> <?=__('atau silahkan gunakan kolom pencarian dibawah ini.', 'oketheme');?></p>
+                    <p><a href="<?=home_url();?>">&laquo; <?=__('kembali ke Home', 'oketheme');?></a> <?=__('atau silahkan gunakan kolom pencarian dibawah ini.', 'oketheme');?></p>
                     <form method="get" action="<?php echo home_url(); ?>" role="search">
                         <input type="search" name="s" placeholder="<?=__('Kata Pencarian', 'oketheme');?>">
                         <button type="submit" role="button"><?=__('Mencari', 'oketheme');?></button>
