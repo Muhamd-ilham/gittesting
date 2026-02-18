@@ -3,23 +3,7 @@
     <div class="_col1 flexcon column gap-20">
         <div class="single-content _blog flexcon nm column gap-20">
             <?php oke_crumb(); ads_content_top();?>
-            <h1>
-                <?php if (is_category()) {
-                    single_cat_title('');
-                } elseif (is_tag()) {
-                    single_tag_title('');
-                } elseif (is_day()) {
-                    the_time('F jS, Y');
-                } elseif (is_month()) {
-                    the_time('F, Y');
-                } elseif (is_year()) {
-                    the_time('Y');
-                } elseif (is_author()) { 
-                    the_author_posts_link();
-                } else if (is_post_type_archive()) {
-                    post_type_archive_title();
-                }?>
-            </h1>
+            
 
             <?php // Deskripsi Arsip
             if(category_description()){
